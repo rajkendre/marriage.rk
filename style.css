@@ -1,0 +1,277 @@
+/* ======================================================
+   GLOBAL SETTINGS
+====================================================== */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #ffd6ec, #ffeafb, #ffedf7);
+    color: #4a0048;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #b80080;
+}
+
+/* ------------------------------------------------------
+   FLOATING HEART ANIMATION
+------------------------------------------------------ */
+@keyframes floatHearts {
+    0%   { transform: translateY(100vh) scale(0.2); opacity: 0.7; }
+    50%  { opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+.hearts-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hearts-container span {
+    position: absolute;
+    color: #ff3f9e;
+    font-size: 22px;
+    animation: floatHearts 6s linear infinite;
+    opacity: 0.8;
+}
+
+.hearts-container span:nth-child(1) { left: 10%; animation-duration: 7s; }
+.hearts-container span:nth-child(2) { left: 20%; animation-duration: 5s; }
+.hearts-container span:nth-child(3) { left: 30%; animation-duration: 6s; }
+.hearts-container span:nth-child(4) { left: 40%; animation-duration: 8s; }
+.hearts-container span:nth-child(5) { left: 55%; animation-duration: 6s; }
+.hearts-container span:nth-child(6) { left: 70%; animation-duration: 7s; }
+.hearts-container span:nth-child(7) { left: 85%; animation-duration: 5.5s; }
+
+/* ======================================================
+   TOP LEFT BUTTONS (LOGIN & LANGUAGE)
+====================================================== */
+.top-buttons {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 12px;
+    z-index: 99;
+}
+
+/* Login Button */
+.btn-login {
+    background: linear-gradient(135deg, #ff4fa3, #ff86ca);
+    color: white;
+    font-size: 20px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 5px 12px rgba(255, 0, 120, 0.4);
+    transition: 0.25s;
+}
+
+.btn-login:hover {
+    background: linear-gradient(135deg, #ff007a, #ff45b2);
+    transform: scale(1.08);
+    box-shadow: 0 8px 18px rgba(255, 0, 100, 0.6);
+}
+
+/* Language Dropdown */
+.language-select {
+    background: linear-gradient(135deg, #ffd1eb, #ff99cc);
+    color: #4a0048;
+    font-size: 18px;
+    padding: 10px 28px;
+    border: 2px solid #ff4fa3;
+    border-radius: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 5px 12px rgba(255, 0, 120, 0.4);
+    transition: 0.25s;
+}
+
+.language-select:hover {
+    background: linear-gradient(135deg, #ff4fa3, #ff99cc);
+    color: white;
+    transform: scale(1.08);
+    box-shadow: 0 8px 18px rgba(255, 0, 100, 0.6);
+}
+
+/* ======================================================
+   GALLERY STYLING
+====================================================== */
+.gallery {
+    margin-top: 90px;
+    z-index: 5;
+    position: relative;
+}
+
+.gallery h2 {
+    color: #c0006e;
+    font-size: 32px;
+}
+
+.gallery-container {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px;
+}
+
+.gallery-container img {
+    height: 200px;
+    border-radius: 18px;
+    cursor: pointer;
+    border: 3px solid #ff80c8;
+    transition: 0.3s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.08);
+    border-color: #ff1493;
+    box-shadow: 0 6px 18px rgba(255, 20, 147, 0.4);
+}
+
+.gallery-footer {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #b80071;
+}
+
+.gallery-footer::before,
+.gallery-footer::after {
+    content: " 💖 ";
+}
+
+/* ======================================================
+   POPUP IMAGE VIEW
+====================================================== */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(255, 160, 190, 0.85);
+    text-align: center;
+    padding-top: 40px;
+}
+
+.popup img {
+    max-width: 70%;
+    max-height: 80%;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(255, 80, 150, 0.6);
+    animation: zoomIn .3s ease;
+    border: 4px solid #ff69b4;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to   { transform: scale(1);   opacity: 1; }
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 48px;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.popup .close:hover {
+    color: #ff0077;
+}
+
+/* ======================================================
+   LOGIN / SIGNUP FORM BOXES
+====================================================== */
+.form-container {
+    width: 360px;
+    margin: 140px auto;
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    text-align: center;
+    border: 3px solid #ff9ad9;
+    box-shadow: 0 8px 22px rgba(255, 0, 120, 0.3);
+}
+
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 12px;
+    border: 2px solid #ff4fa3;
+    font-size: 15px;
+}
+
+button.submit-btn {
+    width: 95%;
+    background: #ff4fa3;
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+button.submit-btn:hover {
+    background: #ff007a;
+    transform: scale(1.05);
+}
+
+/* ======================================================
+   DASHBOARD BOXES
+====================================================== */
+.dashboard-card {
+    background: white;
+    padding: 20px;
+    margin: 30px auto;
+    border-radius: 14px;
+    border: 3px solid #ff9ad9;
+    max-width: 650px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(255, 0, 120, 0.3);
+}
+
+/* ======================================================
+   RESPONSIVE DESIGN
+====================================================== */
+@media (max-width: 480px) {
+
+    .top-buttons {
+        top: 8px;
+        left: 8px;
+    }
+
+    .btn-login,
+    .language-select {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+    .form-container {
+        width: 90%;
+    }
+
+    .gallery-container img {
+        height: 160px;
+    }
+
+    .popup img {
+        max-width: 90%;
+        max-height: 70%;
+    }
+}

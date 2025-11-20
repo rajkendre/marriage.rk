@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matrimony Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="pdf.js"></script>
+
+</head>
+<!-- IMAGE POPUP -->
+
+
+<body>
+
+<header>
+    <h1 id="title">Matrimony Website</h1>
+    <select id="languageSelect" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="mr">Marathi</option>
+    </select>
+    <button onclick="window.location.href='login.html'">Login</button>
+</header>
+
+<section class="hero">
+    <h2 id="welcome_msg">Welcome to our Matrimony Service</h2>
+    <p id="home_description">
+        Find your perfect life partner with our trusted matrimonial service.
+    </p>
+</section>
+
+<section class="gallery">
+    <h2 id="gallery_title">Our Successful Matches</h2>
+
+    <div class="gallery-container">
+        <img src="1.jpg.png" onclick="openImage(this)">
+        <img src="2.jpg.jpg" onclick="openImage(this)">
+        <img src="3.jpg.avif" onclick="openImage(this)">
+        <img src="4.jpg.jpg" onclick="openImage(this)">
+        <img src="5.jpg.jpg" onclick="openImage(this)">
+        <img src="6.jpg.jpg" onclick="openImage(this)">
+        <img src="7.jpg.jpg" onclick="openImage(this)">
+        <img src="8.jpg.jpg" onclick="openImage(this)">
+
+        
+    </div>
+
+    
+   <p class="gallery-footer">
+    Our Successful Clients
+</p>
+
+</section>
+
+<div id="imagePopup" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <img id="popupImage">
+</div>
+<div class="hearts-container">
+    <span>💖</span><span>💗</span><span>💞</span>
+    <span>💖</span><span>💘</span><span>💓</span>
+    <span>💗</span>
+</div>
+
+
+</body>
+</html>
